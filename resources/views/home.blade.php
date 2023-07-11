@@ -32,8 +32,6 @@
     @endforeach
 </div>
 
-
-
 {{-- Posty --}}
     <div class="border-2 border-blue-500 border-dashed rounded-lg p-4 m-5 flex flex-col justify-center align-top">
         <h2 class="text-3xl">Posty</h2>
