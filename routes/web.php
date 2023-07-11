@@ -31,3 +31,7 @@ Route::put('/edit-post/{post}', [PostController::class, 'updatePost']);
 
 //delete
 Route::delete('/delete-post/{post}', [PostController::class, 'deletePost']);
+
+//save
+Route::save('/', [PostController::class, 'savePost']);
+
