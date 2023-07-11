@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Zaznamy;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -17,7 +18,8 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     $posts = Post::all();
-    return view('home', ['posts' => $posts]);
+    $zaznamy = Zaznamy::all();
+    return view('home', ['posts' => $posts, 'zaznamy' => $zaznamy]);
 });
 
 //create
@@ -32,6 +34,4 @@ Route::put('/edit-post/{post}', [PostController::class, 'updatePost']);
 //delete
 Route::delete('/delete-post/{post}', [PostController::class, 'deletePost']);
 
-//save
-// Route::save('/', [PostController::class, 'savePost']);
 

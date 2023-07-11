@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class PostController extends Controller
 {
@@ -16,18 +17,15 @@ class PostController extends Controller
 
     public function updatePost(Post $post, Request $request) {
 
-
         $incomingFields = $request->validate([
             'title' => 'required',
             'body' => 'required',
             'color' => 'required'
-
         ]);
 
         $incomingFields['title'] = strip_tags($incomingFields['title']);
         $incomingFields['body'] = strip_tags($incomingFields['body']);
         $incomingFields['color'] = strip_tags($incomingFields['color']);
-
 
         $post->update($incomingFields);
 
@@ -40,7 +38,10 @@ class PostController extends Controller
         return view('edit-post', ['post'=> $post]);
     }
 
+
     public function createPost(Request $request) {
+
+
 
         $incomingFields = $request->validate([
             'title' => 'required',
@@ -58,11 +59,5 @@ class PostController extends Controller
     }
 
 
-    public function savePost(Request $request) {
 
-
-
-
-        return redirect('/');
-    }
 }
