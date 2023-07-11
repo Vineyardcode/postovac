@@ -31,7 +31,8 @@
     <div class="m-5 text-center flex flex-col gap-7" style="background: {{ $post['color'] }}">
 
 
-            <h1 class="text-lg font-bold">{{ $post['body'] }}</h1>
+            <h1 class="text-xl font-bold underline">{{ $post['title'] }}</h1>
+            <p class="text-lg font-semibold border-2 py-5 mx-16">{{ $post['body'] }}</p>
             <p>Vyvořeno: {{ $post['created_at'] }}</p>
             <p>Upraveno: {{ $post['created_at'] }}</p>
             <p class="font-bold">Barva postu: {{ $post['color'] }}</p>
