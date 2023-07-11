@@ -21,7 +21,7 @@
         $date = $zaznam['date'];
         $formattedDate = date('Y-m-d', strtotime($date));
         @endphp
-        <div class="flex flex-col border-solid border-4 border-black m-4 p-5" onclick="this.style.border = (this.style.border === '15px solid blue') ? '' : '15px solid blue'">
+        <div class="flex flex-col border-solid border-4 border-black m-4 p-5" onclick="this.style.border = (this.style.border === '15px solid blue') ? '' : '15px solid blue'" style="cursor: pointer;>
             <ul>
                 <li class="font-bold">ID: {{ $zaznam['id'] }}</li>
                 <li class="font-bold">Jméno: {{ $zaznam['jmeno'] }}</li>
